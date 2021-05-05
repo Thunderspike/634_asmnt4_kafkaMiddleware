@@ -2,7 +2,7 @@ FROM maven:3.8.1-openjdk-11-slim as build
 
 LABEL "maintainers"="Pol Ajazi; Flavio Amurrio Moya"
 
-WORKDIR /root/kafkSurveyBuildFolder
+WORKDIR /root/kafkaSurveyBuildFolder
 
 COPY . .
 
