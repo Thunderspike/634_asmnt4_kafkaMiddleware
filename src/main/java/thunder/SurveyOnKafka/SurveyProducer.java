@@ -25,7 +25,7 @@ public class SurveyProducer {
 		topicName = "survey-data-topic";
 
 		Properties props = new Properties();
-		props.put("bootstrap.servers", env.get("KAFKA_SERVER")+":9092");
+		props.put("bootstrap.servers", env.get("MY_CLUSTER_KAFKA_BOOTSTRAP_PORT_9092_TCP_ADDR")+":9092");
 		props.put("acks", "all");
 		props.put("retries", 0);
 		props.put("batch.size", 16384);

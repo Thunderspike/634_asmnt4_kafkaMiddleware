@@ -45,7 +45,7 @@ public class SurveyConsumer implements Runnable {
 	public SurveyConsumer() {
 		this.topicName = "survey-data-topic";
 		Properties props = new Properties();
-		props.put("bootstrap.servers", env.get("KAFKA_SERVER")+":9092");
+		props.put("bootstrap.servers", env.get("MY_CLUSTER_KAFKA_BOOTSTRAP_PORT_9092_TCP_ADDR")+":9092");
 		props.put("group.id", "survey-consumer");
 		props.put("enable.auto.commit", "true");
 		props.put("auto.commit.interval.ms", "1000");
