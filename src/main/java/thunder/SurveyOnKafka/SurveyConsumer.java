@@ -32,12 +32,12 @@ public class SurveyConsumer implements Runnable {
 		return new ArrayList<>(surveyRecords.values());
 	}
 	
-	public Survey getSurvey(int id) {
-		return surveyRecords.get(Integer.toString(id));
+	public Survey getSurvey(String id) {
+		return surveyRecords.get(id);
 	}
 	
-	public int generateNewId() {
-		return Integer.parseInt(Collections.max(surveyRecords.keySet())) + 1;
+	public String generateNewId() {
+		return String.valueOf(Integer.parseInt(Collections.max(surveyRecords.keySet())) + 1);
 	}
 	
 	static Gson gson = new Gson();

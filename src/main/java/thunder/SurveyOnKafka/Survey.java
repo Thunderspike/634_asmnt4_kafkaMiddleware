@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Survey {
 
-	private int id;
+	private String id;
 
 	private String fname;
 	private String lname;
@@ -23,7 +23,7 @@ public class Survey {
 	public Survey() {
 	}
 
-	public Survey(int id, String fname, String lname, String address, String city, String state, String zip, String phone,
+	public Survey(String id, String fname, String lname, String address, String city, String state, String zip, String phone,
 			String email, String date, ArrayList<String> campusPref, String referencedThru, String recommendToOthers) {
 		this.id = id;
 		this.fname = fname;
@@ -55,11 +55,11 @@ public class Survey {
 		this.recommendToOthers = newSurvey.recommendToOthers;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

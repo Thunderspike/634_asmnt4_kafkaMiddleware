@@ -41,12 +41,14 @@ public class SurveyProducer {
 	
 	public Survey send(Survey survey) {
 		try {
+			System.out.println("Sending survey");
+			System.out.println(survey);
 		producer.send(
 				new ProducerRecord<String, String>(
 						topicName, 
 						null, 
 						Instant.now().getEpochSecond(), 
-						String.valueOf(survey.getId()), 
+						survey.getId(), 
 						gson.toJson(survey)),
 				(metadata, exception) -> System.out.println(metadata));
 		return survey;

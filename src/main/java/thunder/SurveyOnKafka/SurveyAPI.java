@@ -47,10 +47,10 @@ public class SurveyAPI {
 	public Response initialize() {
 			
 	try {
-			Survey s1 = new Survey(1, "Pol", "Ajazi", "2676 Centennial Ct", "Alexandria", "Virginia", "22311", "2024898714",
+			Survey s1 = new Survey("1", "Pol", "Ajazi", "2676 Centennial Ct", "Alexandria", "Virginia", "22311", "2024898714",
 					"pol.ajazi@yahoo.com", "1618461192994", new ArrayList<String>(Arrays.asList("students", "dorms")),
 					"friends", "likely");
-			Survey s2 = new Survey(2, "Flavio", "Amurrio", "7710 Kalorama Dr", "Annandale", "Virginia",
+			Survey s2 = new Survey("2", "Flavio", "Amurrio", "7710 Kalorama Dr", "Annandale", "Virginia",
 					"22003", "2407762442", "famurrio@gmu.edu", "1618461192992",
 					new ArrayList<String>(Arrays.asList("students")), "internet", "veryLikely");
 			List<Survey> surveys = List.of(s1, s2);
@@ -69,7 +69,7 @@ public class SurveyAPI {
 	public Response getSurvey(@PathParam("id") int id) {
 		System.out.println("\n\nGET by id:"+id);
 		try {
-			Survey survey = consumer.getSurvey(id);
+			Survey survey = consumer.getSurvey(String.valueOf(id));
 			if(survey == null)
 				return Response.status(404).entity(getErrObj("Survey with id: " + id + " not found")).build();
 			return Response.ok(survey).build();
@@ -120,11 +120,11 @@ public class SurveyAPI {
 		System.out.println("\n\nPUT:");
 		System.out.println((new Gson()).toJson(newSurvey));
 		try {
-			Survey foundSurvey = consumer.getSurvey(id);
+			Survey foundSurvey = consumer.getSurvey(String.valueOf(id));
 			if(foundSurvey == null)
 				return Response.status(404).entity(getErrObj("Survey with id: " + id + " not found")).build();
 			
-			newSurvey.setId(id);
+			newSurvey.setId(String.valueOf(id));
 			Survey putSurvey = producer.send(newSurvey);
 			
 			if(putSurvey == null) throw new Exception("Unable to save survey");
