@@ -47,10 +47,10 @@ public class SurveyAPI {
 	public Response initialize() {
 			
 	try {
-			Survey s1 = new Survey("Pol", "Ajazi", "2676 Centennial Ct", "Alexandria", "Virginia", "22311", "2024898714",
+			Survey s1 = new Survey(1, "Pol", "Ajazi", "2676 Centennial Ct", "Alexandria", "Virginia", "22311", "2024898714",
 					"pol.ajazi@yahoo.com", "1618461192994", new ArrayList<String>(Arrays.asList("students", "dorms")),
 					"friends", "likely");
-			Survey s2 = new Survey("Flavio", "Amurrio", "7710 Kalorama Dr", "Annandale", "Virginia",
+			Survey s2 = new Survey(2, "Flavio", "Amurrio", "7710 Kalorama Dr", "Annandale", "Virginia",
 					"22003", "2407762442", "famurrio@gmu.edu", "1618461192992",
 					new ArrayList<String>(Arrays.asList("students")), "internet", "veryLikely");
 			List<Survey> surveys = List.of(s1, s2);

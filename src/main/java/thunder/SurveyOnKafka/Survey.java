@@ -23,8 +23,9 @@ public class Survey {
 	public Survey() {
 	}
 
-	public Survey(String fname, String lname, String address, String city, String state, String zip, String phone,
+	public Survey(int id, String fname, String lname, String address, String city, String state, String zip, String phone,
 			String email, String date, ArrayList<String> campusPref, String referencedThru, String recommendToOthers) {
+		this.id = id;
 		this.fname = fname;
 		this.lname = lname;
 		this.address = address;
