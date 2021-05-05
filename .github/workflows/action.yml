@@ -1,9 +1,9 @@
-name: "deploy middleware to dockerhub"
+name: "deploy"
 
 on: push
 
 jobs:
-    build-push-middleware-image:
+    build-upload-image-dockerhub:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -26,4 +26,4 @@ jobs:
               with:
                   context: .
                   push: true
-                  tags: thunderspike/634_asmnt4_kafkaMiddleware:latest
+                  tags: thunderspike/645_asmnt4_middleware:latest
